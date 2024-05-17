@@ -1,22 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desenvolvedor Cadastra</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desenvolvedor Cadastra</title>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-</head>
-  <link rel="stylesheet" href="main.css" />
+  <body>
+    <!-- Header -->
+    <header class="main-header">
+      <img src="./img/icons/logoCadastra.svg" alt="logoCadastra" />
+      <img src="./img/icons/icon.svg" alt="Ícone" />
+    </header>
 
-</head>
+    <!-- Main content -->
+    <main>
+      <!-- Section principal -->
+      <section class="blusas-section">
+        <div class="blusas-main">
+          <h2>Blusas</h2>
+          <div class="dropdown">
+            <button class="dropbtn">
+              Ordenar por:
+              <img src="./img/icons/arrowDown.svg" alt="Seta para baixo" />
+            </button>
+            <div class="dropdown-content">
+              <a href="#">Mais recentes</a>
+              <a href="#">Menor preço</a>
+              <a href="#">Maior preço</a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<body>
+      <div class="content-wrapper">
+        <!-- Barra lateral -->
+        <aside class="sidebar">
+          <section class="filter-section">
+            <h3>CORES</h3>
+            <div class="filter-options">
+              <!-- Opções de cores com checkboxes -->
+              <label class="checkbox-label"
+                ><input type="checkbox" name="color" value="amarelo" />
+                Amarelo</label
+              >
+              <label
+                ><input type="checkbox" name="color" value="azul" /> Azul</label
+              >
+              <label>
+                <input type="checkbox" name="color" value="branco" />
+                <span></span>
+                Branco</label
+              >
+              <label
+                ><input type="checkbox" name="color" value="branco" />
+                Cinza</label
+              >
+              <label
+                ><input type="checkbox" name="color" value="branco" />
+                Laranja</label
+              >
+              <p class="all-colors">
+                Ver todas as cores
+                <img
+                  class="arrow-colors"
+                  src="./img/icons/arrowDown.svg"
+                  alt="arrowDown"
+                />
+              </p>
+            </div>
+          </section>
 
-</body>
-<h1>Desafio Cadastra</h1>
+          <section class="filter-section">
+            <h3>TAMANHOS</h3>
+            <div class="filter-options">
+              <!-- Opções de tamanhos com botões -->
+              <button class="size-btn" data-size="P">P</button>
+              <button class="size-btn" data-size="M">M</button>
+              <button class="size-btn" data-size="G">G</button>
+              <button class="size-btn-gg" data-size="GG">GG</button>
+              <button class="size-btn" data-size="U">U</button>
+              <button class="size-btn" data-size="36">36</button>
+              <button class="size-btn" data-size="38">38</button>
+              <button class="size-btn" data-size="40">40</button>
+              <button class="size-btn" data-size="36">36</button>
+              <button class="size-btn" data-size="38">38</button>
+              <button class="size-btn" data-size="40">40</button>
+            </div>
+          </section>
 
-<script src="bundle.js"></script>
+          <section class="filter-section">
+            <h3>FAIXA DE PREÇO</h3>
+            <div class="filter-options">
+              <!-- Opções de faixa de preço com radio buttons -->
+              <label
+                ><input type="checkbox" name="price" value="0-50" /> de R$0 até
+                R$50</label
+              >
+              <label
+                ><input type="checkbox" name="price" value="51-150" /> de R$51
+                até R$150</label
+              >
+              <label
+                ><input type="checkbox" name="price" value="151-300" /> de R$151
+                até R$300</label
+              >
+              <label
+                ><input type="checkbox" name="price" value="151-300" /> de R$301
+                até R$500</label
+              >
+              <label
+                ><input type="checkbox" name="price" value="151-300" /> a partir
+                de R$500
+              </label>
+            </div>
+          </section>
+        </aside>
+        <div>dsad</div>
+      </div>
+    </main>
 
+    <script src="bundle.js"></script>
+  </body>
 </html>
