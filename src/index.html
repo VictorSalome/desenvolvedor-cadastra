@@ -11,120 +11,372 @@
     />
     <link rel="stylesheet" href="main.css" />
   </head>
-
   <body>
-    <!-- Header -->
     <header class="main-header">
-      <img src="./img/icons/logoCadastra.svg" alt="logoCadastra" />
-      <img src="./img/icons/icon.svg" alt="Ícone" />
+      <div class="logo-container">
+        <div class="logo-cadastra">
+          <img   src="./img/icons/logoCadastra.svg" alt="logoCadastra" />
+         </div>
+         <div class="icon-card">
+          <img src="./img/icons/icon.svg" alt="Ícone" />
+          <span class="counter" id="counter">0</span>
+         </div>
+      </div>
+    
+  
     </header>
 
-    <!-- Main content -->
-    <main>
-      <!-- Section principal -->
-      <section class="blusas-section">
-        <div class="blusas-main">
-          <h2>Blusas</h2>
-          <div class="dropdown">
-            <button class="dropbtn">
-              Ordenar por:
-              <img src="./img/icons/arrowDown.svg" alt="Seta para baixo" />
+    <!-- Seção para dispositivos móveis -->
+    <section class="filter-section-mobile">
+      <h2 class="filter-title-mobile">Blusas</h2>
+
+      <div class="filter-options-mobile">
+        <button class="button-filter" id="toggle-filter">Filtrar</button>
+        <button class+="button-order" id="toggle-order">Ordenar</button>
+      </div>
+
+      <!-- modal menu de ordenação -->
+      <div id="order-menu" class="order-menu">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>ORDENAR</h3>
+            <img
+              id="close-order-modal"
+              src="./img/icons/X.svg"
+              alt="exit-modal"
+            />
+          </div>
+          <div class="order-options">
+            <button class="order-option" data-order="recent">
+              Mais recente
             </button>
-            <div class="dropdown-content">
-              <a href="#">Mais recentes</a>
-              <a href="#">Menor preço</a>
-              <a href="#">Maior preço</a>
-            </div>
+            <button class="order-option" data-order="highest">
+              Maior preço
+            </button>
+            <button class="order-option" data-order="lowest">
+              Menor preço
+            </button>
           </div>
         </div>
-      </section>
-
-      <div class="content-wrapper">
-        <!-- Barra lateral -->
-        <aside class="sidebar">
-          <section class="filter-section">
-            <h3>CORES</h3>
-            <div class="filter-options">
-              <!-- Opções de cores com checkboxes -->
-              <label class="checkbox-label"
-                ><input type="checkbox" name="color" value="amarelo" />
-                Amarelo</label
-              >
-              <label
-                ><input type="checkbox" name="color" value="azul" /> Azul</label
-              >
-              <label>
-                <input type="checkbox" name="color" value="branco" />
-                <span></span>
-                Branco</label
-              >
-              <label
-                ><input type="checkbox" name="color" value="branco" />
-                Cinza</label
-              >
-              <label
-                ><input type="checkbox" name="color" value="branco" />
-                Laranja</label
-              >
-              <p class="all-colors">
-                Ver todas as cores
-                <img
-                  class="arrow-colors"
-                  src="./img/icons/arrowDown.svg"
-                  alt="arrowDown"
-                />
-              </p>
-            </div>
-          </section>
-
-          <section class="filter-section">
-            <h3>TAMANHOS</h3>
-            <div class="filter-options">
-              <!-- Opções de tamanhos com botões -->
-              <button class="size-btn" data-size="P">P</button>
-              <button class="size-btn" data-size="M">M</button>
-              <button class="size-btn" data-size="G">G</button>
-              <button class="size-btn-gg" data-size="GG">GG</button>
-              <button class="size-btn" data-size="U">U</button>
-              <button class="size-btn" data-size="36">36</button>
-              <button class="size-btn" data-size="38">38</button>
-              <button class="size-btn" data-size="40">40</button>
-              <button class="size-btn" data-size="36">36</button>
-              <button class="size-btn" data-size="38">38</button>
-              <button class="size-btn" data-size="40">40</button>
-            </div>
-          </section>
-
-          <section class="filter-section">
-            <h3>FAIXA DE PREÇO</h3>
-            <div class="filter-options">
-              <!-- Opções de faixa de preço com radio buttons -->
-              <label
-                ><input type="checkbox" name="price" value="0-50" /> de R$0 até
-                R$50</label
-              >
-              <label
-                ><input type="checkbox" name="price" value="51-150" /> de R$51
-                até R$150</label
-              >
-              <label
-                ><input type="checkbox" name="price" value="151-300" /> de R$151
-                até R$300</label
-              >
-              <label
-                ><input type="checkbox" name="price" value="151-300" /> de R$301
-                até R$500</label
-              >
-              <label
-                ><input type="checkbox" name="price" value="151-300" /> a partir
-                de R$500
-              </label>
-            </div>
-          </section>
-        </aside>
-        <div>dsad</div>
       </div>
-    </main>
+
+      <!-- modal menu de filtro MOBILE -->
+      <div id="filter-menu" class="filter-menu">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>FILTRAR</h3>
+            <img
+              id="close-filter-modal"
+              src="./img/icons/X.svg"
+              alt="exit-modal"
+            />
+          </div>
+
+          <!-- acordeon com a seção de cores -->
+          <button class="accordion" id="accordion-colors">
+            <span>CORES</span>
+            <img
+              id="open-accordion"
+              src="./img/icons/arrowDown.svg"
+              alt="arrow down"
+            />
+          </button>
+          <div class="accordion-content" id="accordion-content-colors">
+            <div class="color-option" data-color="Cinza">
+              <input type="checkbox" id="color-cinza-mobile" name-mobile="color" value="Cinza" />
+              <label for="color-cinza-mobile">Cinza</label>
+            </div>
+            <div class="color-option" data-color="Preto">
+              <input type="checkbox" id="color-preto-mobile" name-mobile="color" value="Preto" />
+              <label for="color-preto-mobile">Preto</label>
+            </div>
+            <div class="color-option" data-color="Laranja">
+              <input type="checkbox" id="color-laranja-mobile" name-mobile="color" value="Laranja" />
+              <label for="color-laranja-mobile">Laranja</label>
+            </div>
+            <div class="color-option" data-color="Branco">
+              <input type="checkbox" id="color-branco-mobile" name-mobile="color" value="Branco" />
+              <label for="color-branco-mobile">Branco</label>
+            </div>
+            <div class="color-option" data-color="Amarelo">
+              <input type="checkbox" id="color-amarelo-mobile" name-mobile="color" value="Amarelo" />
+              <label for="color-amarelo-mobile">Amarelo</label>
+            </div>
+            <div class="color-option" data-color="Rosa">
+              <input type="checkbox" id="color-rosa-mobile" name-mobile="color" value="Rosa" />
+              <label for="color-rosa-mobile">Rosa</label>
+            </div>
+          </div>
+
+        
+
+         
+       
+          <!-- acordeon com a seção de tamanhos -->
+          <button class="accordion" id="accordion-sizes">
+            <span>TAMANHOS</span>
+            <img
+              id="open-accordion-sizes"
+              src="./img/icons/arrowDown.svg"
+              alt="arrow down"
+            />
+          </button>
+          <div class="accordion-content" id="accordion-content-sizes">
+            <div class="sizes-container">
+              <div class="size-option">
+                <input type="checkbox" id="size-p-mobile" name-mobile="size" value="P" />
+                <label for="size-p">P</label>
+              </div>
+              <div class="size-option">
+                <input type="checkbox" id="size-m-mobile" name-mobile="size" value="M" />
+                <label for="size-m">M</label>
+              </div>
+              <div class="size-option">
+                <input type="checkbox" id="size-g-mobile" name-mobile="size" value="G" />
+                <label for="size-g">G</label>
+              </div>
+              <div class="size-option">
+                <input type="checkbox" id="size-gg-mobile" name-mobile="size" value="GG" />
+                <label for="size-gg">GG</label>
+              </div>
+              <div class="size-option">
+                <input type="checkbox" id="size-u-mobile" name-mobile="size" value="U" />
+                <label for="size-u">U</label>
+              </div>
+              <div class="size-option">
+                <input type="checkbox" id="size-36-mobile" name-mobile="size" value="36" />
+                <label for="size-36">36</label>
+              </div>
+              <div class="size-option">
+                <input type="checkbox" id="size-38-mobile" name-mobile="size" value="38" />
+                <label for="size-38">38</label>
+              </div>
+              <div class="size-option">
+                <input type="checkbox" id="size-40-mobile" name-mobile="size" value="40" />
+                <label for="size-40">40</label>
+              </div>
+            </div>
+          </div>
+
+
+         
+
+          <!-- Acordeon com a seção de preços -->
+          <button class="accordion" id="accordion-price-range">
+            <span>FAIXA DE PREÇO</span>
+            <img
+              id="open-accordion-price-range"
+              src="./img/icons/arrowDown.svg"
+              alt="arrow down"
+            />
+          </button>
+          <div class="accordion-content" id="accordion-content-price-range">
+            <div class="price-option">
+              <input
+                type="checkbox"
+                id="price-0-50-mobile"
+                name-mobile="price"
+                value="0-50"
+                
+              />
+              <label for="price-0-50">De R$ 0 até R$ 50</label>
+            </div>
+            <div class="price-option">
+              <input
+                type="checkbox"
+                id="price-51-150-mobile"
+                name-mobile="price"
+                value="51-150"
+              />
+              <label for="price-51-150">De R$ 51 até R$ 150</label>
+            </div>
+            <div class="price-option">
+              <input
+                type="checkbox"
+                id="price-151-300-mobile"
+                name-mobile="price"
+                value="151-300"
+              />
+              <label for="price-151-300">De R$ 151 até R$ 300</label>
+            </div>
+            <div class="price-option">
+              <input
+                type="checkbox"
+                id="price-301-500-mobile"
+                name-mobile="price"
+                value="301-500"
+              />
+              <label for="price-301-500">De R$ 301 até R$ 500</label>
+            </div>
+            <div class="price-option">
+              <input 
+                type="checkbox"
+                id="price-500-mobile"
+                name-mobile="price"
+                value="500" />
+              <label for="price-500">A partir de R$ 500</label>
+            </div>
+
+           
+          </div>
+
+          <!-- botão de aplicar e limpar filtros selecionados -->
+        
+          <div class="buttons-mobile">
+            <button class="apply-button-mobile" id="apply-button">Aplicar</button>
+            <button class="clean-button-mobile" id="clean-button">Limpar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="main-mobile">
+      <div class="card-container-mobile" id="card-container-mobile">
+        <div class="product-item-mobile" id="product-item-mobile"></div>
+      </div>
+    </main> 
+
+
+
+
+
+
+
+
+
+    <!-- Seção para dispositivos web -->
+    <section class="blusas-section">
+      <div class="blusas-main">
+        <h2>Blusas</h2>
+        <div class="dropdown" id="dropdown-recent-container">
+          <button class="dropbtn" id="button-recent">
+            Ordenar por:
+            <img src="./img/icons/arrowDown.svg" alt="Seta para baixo" />
+          </button>
+          <div class="dropdown-content" id="dropdown-recent">
+            <a href="#" id="recent">Mais recentes</a>
+            <a href="#" id="lowest">Menor preço</a>
+            <a href="#" id="highest">Maior preço</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="container">
+      <aside class="sidebar">
+        <section class="filter-section">
+          <h3>CORES</h3>
+      
+          <div class="filter-options">
+        
+            <div class="color-option">
+              <input type="checkbox" id="color-cinza" name="color" value="Cinza">
+              <label for="color-cinza">Cinza</label>
+          </div>
+          <div class="color-option">
+              <input type="checkbox" id="color-preto" name="color" value="Preto">
+              <label for="color-preto">Preto</label>
+          </div>
+          <div class="color-option">
+              <input type="checkbox" id="color-laranja" name="color" value="Laranja">
+              <label for="color-laranja">Laranja</label>
+          </div>
+          <div class="color-option">
+              <input type="checkbox" id="color-branco" name="color" value="Branco">
+              <label for="color-branco">Branco</label>
+          </div>
+          <div class="color-option">
+              <input type="checkbox" id="color-amarelo" name="color" value="Amarelo">
+              <label for="color-amarelo">Amarelo</label>
+          </div>
+          <div class="color-option">
+              <input type="checkbox" id="color-rosa" name="color" value="Rosa">
+              <label for="color-rosa">Rosa</label>
+          </div>
+          </div>
+        
+        </section>
+
+        <section class="filter-section">
+          <h3>TAMANHOS</h3>
+          <div class="filter-options">
+            <!-- Opções de tamanhos com botões -->
+             <div class="sizes-container">
+                    <div class="size-option">
+                        <input type="checkbox" id="size-p" name="size" value="P">
+                        <label for="size-p">P</label>
+                    </div>
+                    <div class="size-option">
+                        <input type="checkbox" id="size-m" name="size" value="M">
+                        <label for="size-m">M</label>
+                    </div>
+                    <div class="size-option">
+                        <input type="checkbox" id="size-g" name="size" value="G">
+                        <label for="size-g">G</label>
+                    </div>
+                    <div class="size-option">
+                        <input type="checkbox" id="size-gg" name="size" value="GG">
+                        <label for="size-gg">GG</label>
+                    </div>
+                    <div class="size-option">
+                        <input type="checkbox" id="size-u" name="size" value="U">
+                        <label for="size-u">U</label>
+                    </div>
+                    <div class="size-option">
+                        <input type="checkbox" id="size-36" name="size" value="36">
+                        <label for="size-36">36</label>
+                    </div>
+                    <div class="size-option">
+                        <input type="checkbox" id="size-38" name="size" value="38">
+                        <label for="size-38">38</label>
+                    </div>
+                    <div class="size-option">
+                        <input type="checkbox" id="size-40" name="size" value="40">
+                        <label for="size-40">40</label>
+                    </div>
+                  </div>
+        </section>
+
+        <section class="filter-section">
+          <h3>FAIXA DE PREÇO</h3>
+          <div class="filter-options">
+            <!-- Opções de faixa de preço com radio buttons -->
+            <label>
+              <input type="checkbox" name="price" id="price-0-50" value="0-50" /> de R$0 até
+              R$50
+            </label>
+            <label>
+              <input type="checkbox" name="price" id="price-51-150" value="51-150" /> de R$51 até
+              R$150
+            </label>
+            <label>
+              <input type="checkbox" name="price" id="price-151-300" value="151-300" /> de R$151
+              até R$300
+            </label>
+            <label>
+              <input type="checkbox" name="price" id="price-301-500" value="301-500" /> de R$301
+              até R$500
+            </label>
+            <label>
+              <input type="checkbox" name="price" id="price-500" value="500+" /> a partir de
+              R$500
+            </label>
+          </div>
+        </section>
+      </aside>
+      <main class="main-web">
+        <div class="card-container" id="card-container">
+          <div class="product-item" id="product-item"></div>
+        </div>
+      </main>
+    </div>
+    <div class="container-low-page">
+      <div class="load-more-container">
+        <button class="load-more-btn" id="load-more-btn">CARREGAR MAIS</button>
+      </div>
+      <footer class="footer">
+        <p>CADASTRA: IMPLANTAÇÃO DE E-COMMERCE VTEX</p>
+      </footer>
+    </div>
 
     <script src="bundle.js"></script>
   </body>
