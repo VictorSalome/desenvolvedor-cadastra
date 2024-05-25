@@ -1,8 +1,8 @@
 # Contato
 
-Email: victorsalome41@hotmail.com  
-linkdin: https://www.linkedin.com/in/victorsalome/
-whatsApp: 11-98731-9331
+- Email: victorsalome41@hotmail.com  
+- linkdin: https://www.linkedin.com/in/victorsalome/
+- whatsApp: 11-98731-9331
 
 ### Requisitos Obrigatórios
 
